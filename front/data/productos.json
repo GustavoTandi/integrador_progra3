@@ -6,7 +6,7 @@
     "descripcion": "Consola con lectora de discos, 1 TB de almacenamiento SSD y un control DualSense incluido.",
     "precio": 1099999,
     "categoria": "consola",
-    "imagen": "/img/productos/consola-01.svg",
+    "imagen": "/assets/img/consolas/ps5_slim.jpg",
     "activo": true
   },
   {
@@ -16,7 +16,7 @@
     "descripcion": "Edición digital, sin lectora de discos. 1 TB de almacenamiento SSD y un control DualSense incluido.",
     "precio": 949999,
     "categoria": "consola",
-    "imagen": "/img/productos/consola-02.svg",
+    "imagen": "/assets/img/consolas/ps5_slim_digital.jpg",
     "activo": true
   },
   {
@@ -26,7 +26,7 @@
     "descripcion": "La PlayStation más potente: gráficos mejorados, 2 TB de almacenamiento SSD y edición digital.",
     "precio": 1699999,
     "categoria": "consola",
-    "imagen": "/img/productos/consola-03.svg",
+    "imagen": "/assets/img/consolas/ps5_pro.jpg",
     "activo": true
   },
   {
@@ -36,7 +36,7 @@
     "descripcion": "Juegos en 4K y hasta 120 cuadros por segundo. 1 TB de almacenamiento SSD y lectora de discos.",
     "precio": 1249999,
     "categoria": "consola",
-    "imagen": "/img/productos/consola-04.svg",
+    "imagen": "/assets/img/consolas/xbox_series_x.jpg",
     "activo": true
   },
   {
@@ -46,7 +46,7 @@
     "descripcion": "Consola compacta 100 % digital, con 512 GB de almacenamiento SSD. Ideal para empezar.",
     "precio": 699999,
     "categoria": "consola",
-    "imagen": "/img/productos/consola-05.svg",
+    "imagen": "/assets/img/consolas/xbox_series_s.png",
     "activo": true
   },
   {
@@ -56,7 +56,7 @@
     "descripcion": "Pantalla OLED de 7 pulgadas y 64 GB de almacenamiento. Se juega en el televisor o en modo portátil.",
     "precio": 649999,
     "categoria": "consola",
-    "imagen": "/img/productos/consola-06.svg",
+    "imagen": "/assets/img/consolas/nintendo_oled.jpg",
     "activo": true
   },
   {
@@ -66,7 +66,7 @@
     "descripcion": "Versión compacta y liviana, pensada solo para jugar en modo portátil. Pantalla de 5,5 pulgadas.",
     "precio": 399999,
     "categoria": "consola",
-    "imagen": "/img/productos/consola-07.svg",
+    "imagen": "/assets/img/consolas/nintendo_lite.jpg",
     "activo": true
   },
   {
@@ -76,7 +76,7 @@
     "descripcion": "La nueva generación de Nintendo: pantalla de 7,9 pulgadas, 256 GB de almacenamiento y mandos magnéticos.",
     "precio": 999999,
     "categoria": "consola",
-    "imagen": "/img/productos/consola-08.svg",
+    "imagen": "/assets/img/consolas/nintendo_2.jpg",
     "activo": true
   },
   {
@@ -86,7 +86,7 @@
     "descripcion": "Tu biblioteca de Steam en formato portátil. Pantalla OLED de 7,4 pulgadas y 512 GB de almacenamiento.",
     "precio": 1199999,
     "categoria": "consola",
-    "imagen": "/img/productos/consola-09.svg",
+    "imagen": "/assets/img/consolas/steam_deck_oled.jpg",
     "activo": true
   },
   {
@@ -96,7 +96,7 @@
     "descripcion": "Consola portátil con Windows, pantalla de 7 pulgadas a 120 Hz y 1 TB de almacenamiento SSD.",
     "precio": 1499999,
     "categoria": "consola",
-    "imagen": "/img/productos/consola-10.svg",
+    "imagen": "/assets/img/consolas/rog_ally_x.jpg",
     "activo": true
   },
   {
@@ -106,7 +106,7 @@
     "descripcion": "Consola de la generación anterior con 500 GB de almacenamiento. Modelo discontinuado.",
     "precio": 549999,
     "categoria": "consola",
-    "imagen": "/img/productos/consola-11.svg",
+    "imagen": "/assets/img/consolas/ps4_slim.jpg",
     "activo": false
   },
   {
@@ -116,7 +116,7 @@
     "descripcion": "El simulador de fútbol con clubes, ligas y selecciones oficiales. Modos carrera, Ultimate Team y en línea.",
     "precio": 89999,
     "categoria": "videojuego",
-    "imagen": "/img/productos/videojuego-12.svg",
+    "imagen": "/assets/img/juegos/fc_26.jpg",
     "activo": true
   },
   {
@@ -126,7 +126,7 @@
     "descripcion": "Aventura de acción en la que Kratos y Atreus recorren los nueve reinos de la mitología nórdica.",
     "precio": 69999,
     "categoria": "videojuego",
-    "imagen": "/img/productos/videojuego-13.svg",
+    "imagen": "/assets/img/juegos/god_of_war.jpg",
     "activo": true
   },
   {
@@ -136,7 +136,7 @@
     "descripcion": "Aventura de mundo abierto por Nueva York en la que se alterna entre Peter Parker y Miles Morales.",
     "precio": 79999,
     "categoria": "videojuego",
-    "imagen": "/img/productos/videojuego-14.svg",
+    "imagen": "/assets/img/juegos/marvel.jpg",
     "activo": true
   },
   {
@@ -146,7 +146,7 @@
     "descripcion": "Juego de rol y acción de mundo abierto, con combates exigentes y una enorme libertad para explorar.",
     "precio": 59999,
     "categoria": "videojuego",
-    "imagen": "/img/productos/videojuego-15.svg",
+    "imagen": "/assets/img/juegos/elden_ring.jpg",
     "activo": true
   },
   {
@@ -156,7 +156,7 @@
     "descripcion": "Carreras de mundo abierto por los paisajes de México, con cientos de autos para manejar y personalizar.",
     "precio": 54999,
     "categoria": "videojuego",
-    "imagen": "/img/productos/videojuego-16.svg",
+    "imagen": "/assets/img/juegos/forza_horizon.jpg",
     "activo": true
   },
   {
@@ -166,7 +166,7 @@
     "descripcion": "El Jefe Maestro vuelve en una campaña de ciencia ficción con zonas abiertas y multijugador en línea.",
     "precio": 44999,
     "categoria": "videojuego",
-    "imagen": "/img/productos/videojuego-17.svg",
+    "imagen": "/assets/img/juegos/halo_infinite.jpg",
     "activo": true
   },
   {
@@ -176,7 +176,7 @@
     "descripcion": "Juego de rol espacial: creá tu personaje, armá tu nave y explorá cientos de planetas.",
     "precio": 74999,
     "categoria": "videojuego",
-    "imagen": "/img/productos/videojuego-18.svg",
+    "imagen": "/assets/img/juegos/starfield.jpg",
     "activo": true
   },
   {
@@ -186,7 +186,7 @@
     "descripcion": "Aventura de mundo abierto por la tierra y los cielos de Hyrule, con libertad total para construir y explorar.",
     "precio": 84999,
     "categoria": "videojuego",
-    "imagen": "/img/productos/videojuego-19.svg",
+    "imagen": "/assets/img/juegos/zelda.jpg",
     "activo": true
   },
   {
@@ -196,7 +196,7 @@
     "descripcion": "Carreras de karts para toda la familia, con multijugador local de hasta cuatro personas y modo en línea.",
     "precio": 74999,
     "categoria": "videojuego",
-    "imagen": "/img/productos/videojuego-20.svg",
+    "imagen": "/assets/img/juegos/mario_kart.jpg",
     "activo": true
   },
   {
@@ -206,7 +206,7 @@
     "descripcion": "Construí, explorá y sobreviví en mundos infinitos hechos de bloques, solo o con amigos.",
     "precio": 39999,
     "categoria": "videojuego",
-    "imagen": "/img/productos/videojuego-21.svg",
+    "imagen": "/assets/img/juegos/minecraft.jpg",
     "activo": true
   },
   {
@@ -216,7 +216,7 @@
     "descripcion": "Edición anterior del simulador de fútbol. Título discontinuado.",
     "precio": 29999,
     "categoria": "videojuego",
-    "imagen": "/img/productos/videojuego-22.svg",
+    "imagen": "/assets/img/juegos/fifa_23.jpg",
     "activo": false
   }
 ]
