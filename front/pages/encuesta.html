@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="oscuro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Encuesta · Gaming Zone</title>
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/componentes.css">
+  <link rel="stylesheet" href="../css/paginas.css">
+  <script src="../js/tema.js"></script>
+</head>
+<body>
+  <header class="encabezado">
+    <div class="encabezado__interior">
+      <div class="marca">
+        <img src="../assets/icon-192.png" alt="Logo de Gaming Zone">
+        <span>
+          <span class="marca__nombre"><span class="marca__gaming">Gaming</span> <span class="marca__zone">Zone</span></span>
+          <span class="marca__lema">Consolas y videojuegos</span>
+        </span>
+      </div>
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="nav__enlace" href="../index.html">Volver al inicio</a>
+        <a class="nav__enlace nav__enlace--secundario" data-enlace-admin href="http://localhost:3000/admin/login">Administración</a>
+        <button type="button" class="nav__enlace nav__tema" id="btn-tema" aria-label="Cambiar tema">Tema</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenido contenido--angosto">
+    <div class="titulo-pagina">
+      <div>
+        <h1>¿Cómo fue tu experiencia?</h1>
+        <p>Tu opinión nos ayuda a mejorar. Te lleva menos de un minuto.</p>
+      </div>
+    </div>
+
+    <form class="tarjeta" id="form-encuesta" novalidate>
+      <div class="aviso aviso--error oculto" id="aviso-error" role="alert"></div>
+
+      <div class="campo" data-campo="email">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" maxlength="120" autocomplete="off" placeholder="nombre@ejemplo.com">
+        <span class="campo__error"></span>
+      </div>
+
+      <div class="campo" data-campo="puntuacion">
+        <label for="puntuacion">¿Qué puntuación le das al servicio?</label>
+        <div class="encuesta__puntaje">
+          <input type="range" id="puntuacion" name="puntuacion" min="1" max="10" step="1" value="8">
+          <output id="puntuacion-valor" for="puntuacion">8</output>
+        </div>
+        <div class="encuesta__escala"><span>1 · Muy malo</span><span>10 · Excelente</span></div>
+        <span class="campo__error"></span>
+      </div>
+
+      <div class="campo" data-campo="comentario">
+        <label for="comentario">Contanos tu opinión</label>
+        <textarea id="comentario" name="comentario" maxlength="500" placeholder="¿Qué te gustó? ¿Qué podríamos mejorar?"></textarea>
+        <span class="campo__ayuda"><span id="comentario-contador">0</span> / 500 caracteres (mínimo 10)</span>
+        <span class="campo__error"></span>
+      </div>
+
+      <div class="campo" data-campo="recomienda">
+        <label class="casilla" for="recomienda">
+          <input type="checkbox" id="recomienda" name="recomienda">
+          Recomendaría Gaming Zone a otra persona
+        </label>
+        <span class="campo__error"></span>
+      </div>
+
+      <div class="campo" data-campo="imagen">
+        <label for="imagen">Sumá una foto (opcional)</label>
+        <input type="file" id="imagen" name="imagen" accept="image/jpeg,image/png,image/webp">
+        <span class="campo__ayuda">JPG, PNG o WEBP de hasta 2 MB.</span>
+        <span class="campo__error"></span>
+      </div>
+
+      <div class="encuesta__acciones">
+        <a class="btn btn--fantasma" href="../index.html" id="btn-omitir">Omitir encuesta</a>
+        <button type="submit" class="btn btn--primario btn--grande" id="btn-enviar">Enviar opinión</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__interior">
+      <span><strong>Gaming Zone</strong> · Consolas y videojuegos</span>
+      <span>Alumnos: <strong>Gustavo Tandi y Daniel Martinez</strong> · Programación III · UTN Avellaneda</span>
+    </div>
+  </footer>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/modales.js"></script>
+  <script src="../js/carrito.js"></script>
+  <script src="../js/encuesta.js"></script>
+</body>
+</html>

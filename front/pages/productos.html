@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="oscuro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Productos · Gaming Zone</title>
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/componentes.css">
+  <link rel="stylesheet" href="../css/paginas.css">
+  <script src="../js/tema.js"></script>
+</head>
+<body>
+  <header class="encabezado">
+    <div class="encabezado__interior">
+      <div class="marca">
+        <img src="../assets/icon-192.png" alt="Logo de Gaming Zone">
+        <span>
+          <span class="marca__nombre"><span class="marca__gaming">Gaming</span> <span class="marca__zone">Zone</span></span>
+          <span class="marca__lema">Consolas y videojuegos</span>
+        </span>
+      </div>
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="nav__enlace nav__enlace--activo" href="../pages/productos.html">Productos</a>
+        <a class="nav__enlace" href="../pages/carrito.html">Carrito <span class="nav__contador" id="nav-contador">0</span></a>
+        <button type="button" class="nav__enlace nav__enlace--secundario" id="nav-cancelar">Cancelar compra</button>
+        <a class="nav__enlace nav__enlace--secundario" data-enlace-admin href="http://localhost:3000/admin/login">Administración</a>
+        <button type="button" class="nav__enlace nav__tema" id="btn-tema" aria-label="Cambiar tema">Tema</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenido">
+    <div class="titulo-pagina">
+      <div>
+        <h1 id="saludo">Productos</h1>
+        <p>Elegí lo que quieras llevar y agregalo al carrito.</p>
+      </div>
+    </div>
+
+    <div class="pestanias" id="pestanias" role="tablist" aria-label="Tipos de producto"></div>
+
+    <div class="aviso aviso--error oculto" id="aviso-error" role="alert"></div>
+    <div class="aviso aviso--info oculto" id="aviso-local" role="status">
+      Sin conexión con el servidor: se muestra el catálogo de ejemplo. Para comprar, encendé el backend.
+    </div>
+    <section class="productos" id="productos" aria-live="polite"></section>
+    <nav class="paginacion" id="paginacion" aria-label="Páginas de productos"></nav>
+
+    <div class="barra-carrito oculto" id="barra-carrito">
+      <span id="barra-resumen"></span>
+      <a class="btn btn--primario" href="carrito.html">Ver carrito</a>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__interior">
+      <span><strong>Gaming Zone</strong> · Consolas y videojuegos</span>
+      <span>Alumnos: <strong>Gustavo Tandi y Daniel Martinez</strong> · Programación III · UTN Avellaneda</span>
+    </div>
+  </footer>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/modales.js"></script>
+  <script src="../js/carrito.js"></script>
+  <script src="../js/productos.js"></script>
+</body>
+</html>

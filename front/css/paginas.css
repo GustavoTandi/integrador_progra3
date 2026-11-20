@@ -1,0 +1,652 @@
+/* ==========================================================================
+   Gaming Zone - Estilos de cada pantalla de la tienda (se suman a base.css y componentes.css)
+   ========================================================================== */
+
+/* ------------------------------- Bienvenida ------------------------------- */
+
+.bienvenida {
+  max-width: 520px;
+  margin: 4vh auto 0;
+  text-align: center;
+}
+
+.bienvenida__logo {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 16px;
+}
+
+.bienvenida h1 {
+  margin-bottom: 8px;
+}
+
+.bienvenida__intro {
+  color: var(--texto-suave);
+  margin-bottom: 24px;
+}
+
+.bienvenida form {
+  text-align: left;
+}
+
+.bienvenida input[type='text'] {
+  min-height: 54px;
+  font-size: 1.1rem;
+}
+
+.bienvenida__pasos {
+  display: flex;
+  justify-content: center;
+  gap: 8px 18px;
+  flex-wrap: wrap;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+.bienvenida__pasos li::before {
+  content: counter(paso);
+  counter-increment: paso;
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--acento-suave);
+  color: var(--acento-fuerte);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.bienvenida__pasos {
+  counter-reset: paso;
+}
+
+/* -------------------------------- Pestañas -------------------------------- */
+
+.pestanias {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 6px;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  width: fit-content;
+  max-width: 100%;
+}
+
+.pestania {
+  min-height: 46px;
+  padding: 8px 26px;
+  border: none;
+  border-radius: var(--radio-chico);
+  background: none;
+  color: var(--texto-suave);
+  font: inherit;
+  font-weight: 700;
+  font-size: 1.02rem;
+  cursor: pointer;
+}
+
+.pestania:hover {
+  background: var(--superficie-2);
+}
+
+.pestania--activa,
+.pestania--activa:hover {
+  background: var(--acento);
+  color: var(--sobre-acento);
+}
+
+/* -------------------------------- Productos ------------------------------- */
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+}
+
+.producto--en-carrito {
+  border-color: var(--acento);
+}
+
+.producto__imagen {
+  display: block;
+  aspect-ratio: 4 / 3;
+  background: var(--superficie-2);
+}
+
+.producto__imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.producto__cuerpo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px 16px;
+}
+
+.producto__marca {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--texto-suave);
+}
+
+.producto__nombre {
+  font-size: 1.1rem;
+}
+
+.producto__descripcion {
+  flex: 1;
+  color: var(--texto-suave);
+  font-size: 0.92rem;
+}
+
+.producto__pie {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 6px 0 8px;
+}
+
+.producto__precio {
+  font-size: 1.3rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.producto__detalle {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.controles {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.controles .btn--peligro {
+  margin-left: auto;
+}
+
+.cantidad {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-chico);
+  overflow: hidden;
+  background: var(--superficie);
+}
+
+.cantidad button {
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: var(--superficie-2);
+  color: var(--texto);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.cantidad button:hover {
+  background: var(--acento-suave);
+  color: var(--acento-fuerte);
+}
+
+.cantidad span {
+  min-width: 44px;
+  text-align: center;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ------------------------------- Paginación ------------------------------- */
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+
+.paginacion__pagina {
+  min-width: 44px;
+  padding: 9px 12px;
+}
+
+.paginacion__pagina--actual,
+.paginacion__pagina--actual:hover:not(:disabled) {
+  background: var(--acento);
+  border-color: var(--acento);
+  color: var(--sobre-acento);
+}
+
+/* --------------------- Barra inferior con el resumen ---------------------- */
+
+.barra-carrito {
+  position: sticky;
+  bottom: 12px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 26px;
+  padding: 12px 14px 12px 20px;
+  background: var(--superficie);
+  border: 1px solid var(--acento);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.barra-carrito strong {
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------- Detalle -------------------------------- */
+
+.detalle {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.detalle__imagen {
+  border-radius: var(--radio);
+  overflow: hidden;
+  border: 1px solid var(--borde);
+  background: var(--superficie-2);
+  aspect-ratio: 4 / 3;
+}
+
+.detalle__imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detalle__datos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detalle__precio {
+  font-size: 2rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.detalle__ficha {
+  margin: 4px 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 16px;
+  font-size: 0.95rem;
+}
+
+.detalle__ficha dt {
+  color: var(--texto-suave);
+}
+
+.detalle__ficha dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* --------------------------------- Carrito -------------------------------- */
+
+.carrito {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 22px;
+  align-items: start;
+}
+
+.carrito__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.carrito__item {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 12px;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+.carrito__item img {
+  width: 96px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: var(--radio-chico);
+  background: var(--superficie-2);
+}
+
+.carrito__item h3 {
+  font-size: 1.02rem;
+}
+
+.carrito__item small {
+  color: var(--texto-suave);
+}
+
+.carrito__lado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.carrito__subtotal {
+  font-size: 1.1rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.resumen-compra {
+  position: sticky;
+  top: 86px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resumen-compra__fila {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--texto-suave);
+}
+
+.resumen-compra__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--borde);
+  font-weight: 700;
+}
+
+.resumen-compra__total strong {
+  font-size: 1.6rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------- Ticket -------------------------------- */
+
+.ticket {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 26px 24px;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.ticket__cabecera {
+  text-align: center;
+  padding-bottom: 16px;
+  border-bottom: 2px dashed var(--borde);
+}
+
+.ticket__cabecera img {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 8px;
+}
+
+.ticket__cabecera h1 {
+  font-size: 1.5rem;
+}
+
+.ticket__datos {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 16px;
+  margin: 16px 0;
+  font-size: 0.95rem;
+}
+
+.ticket__datos dt {
+  color: var(--texto-suave);
+}
+
+.ticket__datos dd {
+  margin: 0;
+  text-align: right;
+  font-weight: 650;
+}
+
+.ticket__tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+}
+
+.ticket__tabla th {
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--texto-suave);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.ticket__tabla td {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--borde);
+  vertical-align: top;
+}
+
+.ticket__tabla td small {
+  display: block;
+  color: var(--texto-suave);
+}
+
+.ticket__tabla .num {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  padding-left: 10px;
+}
+
+.ticket__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 2px dashed var(--borde);
+  font-weight: 700;
+}
+
+.ticket__total strong {
+  font-size: 1.7rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.ticket__gracias {
+  margin-top: 14px;
+  text-align: center;
+  color: var(--texto-suave);
+}
+
+.ticket-acciones {
+  max-width: 480px;
+  margin: 18px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* --------------------------------- Encuesta ------------------------------- */
+
+.encuesta__puntaje {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.encuesta__puntaje output {
+  min-width: 52px;
+  padding: 6px 0;
+  border-radius: var(--radio-chico);
+  background: var(--acento-suave);
+  color: var(--acento-fuerte);
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.encuesta__escala {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+.encuesta__acciones {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* -------------------------------- Responsive ------------------------------ */
+
+@media (max-width: 860px) {
+  .carrito {
+    grid-template-columns: 1fr;
+  }
+
+  .resumen-compra {
+    position: static;
+  }
+
+  .detalle {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .pestanias {
+    width: 100%;
+  }
+
+  .pestania {
+    flex: 1;
+    padding: 8px 10px;
+  }
+
+  .productos {
+    grid-template-columns: 1fr;
+  }
+
+  .carrito__item {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .carrito__item img {
+    width: 72px;
+    height: 54px;
+  }
+
+  .carrito__lado {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .barra-carrito {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .ticket-acciones {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Al imprimir el ticket solo se ve el ticket */
+@media print {
+  .encabezado,
+  .pie,
+  .ticket-acciones {
+    display: none;
+  }
+
+  .ticket {
+    box-shadow: none;
+    border: none;
+  }
+}
+
+/* --------------------------- Identidad Gaming Zone ------------------------ */
+
+.producto__precio,
+.detalle__precio,
+.carrito__subtotal {
+  color: var(--dorado);
+}
+
+.producto--en-carrito {
+  box-shadow: var(--brillo);
+}
+
+.bienvenida__logo {
+  width: min(100%, 300px);
+  height: auto;
+  border-radius: var(--radio);
+}
+
+.ticket__cabecera img {
+  border-radius: 12px;
+}

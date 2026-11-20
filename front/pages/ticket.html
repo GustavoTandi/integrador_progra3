@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="oscuro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ticket · Gaming Zone</title>
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/componentes.css">
+  <link rel="stylesheet" href="../css/paginas.css">
+  <script src="../js/tema.js"></script>
+</head>
+<body>
+  <header class="encabezado">
+    <div class="encabezado__interior">
+      <div class="marca">
+        <img src="../assets/icon-192.png" alt="Logo de Gaming Zone">
+        <span>
+          <span class="marca__nombre"><span class="marca__gaming">Gaming</span> <span class="marca__zone">Zone</span></span>
+          <span class="marca__lema">Consolas y videojuegos</span>
+        </span>
+      </div>
+      <nav class="nav" aria-label="Navegación principal">
+        <button type="button" class="nav__enlace" id="nav-salir">Salir</button>
+        <a class="nav__enlace nav__enlace--secundario" data-enlace-admin href="http://localhost:3000/admin/login">Administración</a>
+        <button type="button" class="nav__enlace nav__tema" id="btn-tema" aria-label="Cambiar tema">Tema</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenido">
+    <div class="aviso aviso--exito" role="status" style="max-width: 480px; margin: 0 auto 18px; text-align: center">
+      ¡Compra realizada con éxito!
+    </div>
+
+    <article class="ticket" id="ticket">
+      <div class="ticket__cabecera">
+        <img src="../assets/icon-192.png" alt="">
+        <h1 id="ticket-empresa"></h1>
+        <p class="texto-suave" id="ticket-lema"></p>
+      </div>
+
+      <dl class="ticket__datos">
+        <dt>Ticket N°</dt><dd id="ticket-numero"></dd>
+        <dt>Fecha</dt><dd id="ticket-fecha"></dd>
+        <dt>Cliente</dt><dd id="ticket-cliente"></dd>
+      </dl>
+
+      <table class="ticket__tabla">
+        <thead>
+          <tr><th>Producto</th><th class="num">Cant.</th><th class="num">Subtotal</th></tr>
+        </thead>
+        <tbody id="ticket-productos"></tbody>
+      </table>
+
+      <div class="ticket__total"><span>Total</span><strong id="ticket-total"></strong></div>
+      <p class="ticket__gracias">¡Gracias por tu compra! Retirá tus productos en el mostrador con este ticket.</p>
+    </article>
+
+    <div class="aviso aviso--error oculto" id="aviso-error" role="alert" style="max-width: 480px; margin: 18px auto 0"></div>
+
+    <div class="ticket-acciones">
+      <button type="button" class="btn btn--secundario btn--grande" id="btn-pdf">Descargar PDF</button>
+      <button type="button" class="btn btn--primario btn--grande" id="btn-salir">Salir</button>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__interior">
+      <span><strong>Gaming Zone</strong> · Consolas y videojuegos</span>
+      <span>Alumnos: <strong>Gustavo Tandi y Daniel Martinez</strong> · Programación III · UTN Avellaneda</span>
+    </div>
+  </footer>
+
+  <!-- jsPDF: genera el PDF del ticket en el navegador -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/modales.js"></script>
+  <script src="../js/carrito.js"></script>
+  <script src="../js/ticket.js"></script>
+</body>
+</html>

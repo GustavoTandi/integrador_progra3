@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="oscuro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carrito · Gaming Zone</title>
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/componentes.css">
+  <link rel="stylesheet" href="../css/paginas.css">
+  <script src="../js/tema.js"></script>
+</head>
+<body>
+  <header class="encabezado">
+    <div class="encabezado__interior">
+      <div class="marca">
+        <img src="../assets/icon-192.png" alt="Logo de Gaming Zone">
+        <span>
+          <span class="marca__nombre"><span class="marca__gaming">Gaming</span> <span class="marca__zone">Zone</span></span>
+          <span class="marca__lema">Consolas y videojuegos</span>
+        </span>
+      </div>
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="nav__enlace" href="../pages/productos.html">Productos</a>
+        <a class="nav__enlace nav__enlace--activo" href="../pages/carrito.html">Carrito <span class="nav__contador" id="nav-contador">0</span></a>
+        <button type="button" class="nav__enlace nav__enlace--secundario" id="nav-cancelar">Cancelar compra</button>
+        <a class="nav__enlace nav__enlace--secundario" data-enlace-admin href="http://localhost:3000/admin/login">Administración</a>
+        <button type="button" class="nav__enlace nav__tema" id="btn-tema" aria-label="Cambiar tema">Tema</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenido">
+    <div class="titulo-pagina">
+      <div>
+        <h1>Tu carrito</h1>
+        <p id="subtitulo">Revisá los productos antes de finalizar la compra.</p>
+      </div>
+      <a class="btn btn--secundario" href="productos.html">← Seguir comprando</a>
+    </div>
+
+    <div class="aviso aviso--error oculto" id="aviso-error" role="alert"></div>
+
+    <section class="tarjeta vacio oculto" id="carrito-vacio">
+      <h2>El carrito está vacío</h2>
+      <p style="margin: 8px 0 18px">Todavía no agregaste ningún producto.</p>
+      <a class="btn btn--primario" href="productos.html">Ver productos</a>
+    </section>
+
+    <section class="carrito oculto" id="carrito">
+      <ul class="carrito__lista" id="carrito-lista"></ul>
+
+      <aside class="resumen-compra tarjeta" aria-label="Resumen de la compra">
+        <h2>Resumen</h2>
+        <div class="resumen-compra__fila"><span>Cliente</span><strong id="resumen-cliente"></strong></div>
+        <div class="resumen-compra__fila"><span>Unidades</span><strong id="resumen-unidades"></strong></div>
+        <div class="resumen-compra__total"><span>Total</span><strong id="resumen-total"></strong></div>
+        <button type="button" class="btn btn--primario btn--grande btn--bloque" id="btn-finalizar">Finalizar compra</button>
+        <button type="button" class="btn btn--fantasma btn--bloque" id="btn-vaciar">Vaciar carrito</button>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__interior">
+      <span><strong>Gaming Zone</strong> · Consolas y videojuegos</span>
+      <span>Alumnos: <strong>Gustavo Tandi y Daniel Martinez</strong> · Programación III · UTN Avellaneda</span>
+    </div>
+  </footer>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/modales.js"></script>
+  <script src="../js/carrito.js"></script>
+</body>
+</html>

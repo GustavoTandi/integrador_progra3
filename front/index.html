@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="oscuro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bienvenida · Gaming Zone</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/componentes.css">
+  <link rel="stylesheet" href="css/paginas.css">
+  <script src="js/tema.js"></script>
+</head>
+<body>
+  <header class="encabezado">
+    <div class="encabezado__interior">
+      <div class="marca">
+        <img src="assets/icon-192.png" alt="Logo de Gaming Zone">
+        <span>
+          <span class="marca__nombre"><span class="marca__gaming">Gaming</span> <span class="marca__zone">Zone</span></span>
+          <span class="marca__lema">Consolas y videojuegos</span>
+        </span>
+      </div>
+      <nav class="nav" aria-label="Navegación principal">
+        <button type="button" class="nav__enlace nav__tema" id="btn-tema" aria-label="Cambiar tema">Tema</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenido">
+    <section class="bienvenida tarjeta">
+      <img class="bienvenida__logo" src="assets/logo-480.jpg" alt="Gaming Zone, consolas y videojuegos">
+      <h1>¡Bienvenido!</h1>
+      <p class="bienvenida__intro">Consolas y videojuegos para llevar hoy mismo. Decinos tu nombre para empezar tu compra.</p>
+
+      <form id="form-bienvenida" novalidate>
+        <div class="campo" id="campo-nombre">
+          <label for="nombre">Tu nombre</label>
+          <input type="text" id="nombre" name="nombre" maxlength="30" autocomplete="off" placeholder="Por ejemplo: Juan">
+          <span class="campo__error" id="error-nombre" role="alert"></span>
+        </div>
+        <button type="submit" class="btn btn--primario btn--grande btn--bloque">Continuar</button>
+      </form>
+
+      <ol class="bienvenida__pasos">
+        <li>Elegí tus productos</li>
+        <li>Confirmá el carrito</li>
+        <li>Retirá con tu ticket</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__interior">
+      <span><strong>Gaming Zone</strong> · Consolas y videojuegos</span>
+      <span>Alumnos: <strong>Gustavo Tandi y Daniel Martinez</strong> · Programación III · UTN Avellaneda</span>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/modales.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/inicio.js"></script>
+</body>
+</html>
