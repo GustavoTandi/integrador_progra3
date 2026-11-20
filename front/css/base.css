@@ -1,0 +1,393 @@
+/* ==========================================================================
+   Gaming Zone - Estilos base: variables de tema, tipografía, encabezado y pie.
+   El tema se elige con el atributo data-tema de la etiqueta <html>.
+   Los colores salen del logo: fondo azul noche con neón verde, cian y violeta.
+   ========================================================================== */
+
+/* Tema claro */
+:root {
+  --fondo: #f1f3fb;
+  --superficie: #ffffff;
+  --superficie-2: #e7eaf6;
+  --texto: #111827;
+  --texto-suave: #55607a;
+  --borde: #d3d8ea;
+  --acento: #6d28d9;
+  --acento-fuerte: #5b21b6;
+  --acento-suave: #ede9fe;
+  --sobre-acento: #ffffff;
+  --cian: #0e7490;
+  --cian-suave: #cffafe;
+  --dorado: #b45309;
+  --peligro: #be123c;
+  --peligro-suave: #ffe4e6;
+  --exito: #15803d;
+  --exito-suave: #dcfce7;
+  --sombra: 0 6px 22px rgba(30, 30, 70, 0.08);
+  --brillo: none;
+  --rejilla: rgba(109, 40, 217, 0.045);
+  --degradado-marca: linear-gradient(90deg, #0891b2, #7c3aed);
+  --degradado-zona: linear-gradient(180deg, #d97706, #ea580c);
+  --radio: 14px;
+  --radio-chico: 10px;
+  color-scheme: light;
+}
+
+/* Tema oscuro (el de la marca, es el que se usa por defecto) */
+:root[data-tema='oscuro'] {
+  --fondo: #060a14;
+  --superficie: #0e1525;
+  --superficie-2: #172138;
+  --texto: #e8ecf8;
+  --texto-suave: #93a0bd;
+  --borde: #24304d;
+  --acento: #4ade80;
+  --acento-fuerte: #86efac;
+  --acento-suave: #0f2a1d;
+  --sobre-acento: #04130a;
+  --cian: #67e8f9;
+  --cian-suave: #0b2a36;
+  --dorado: #fbbf24;
+  --peligro: #fb7185;
+  --peligro-suave: #3a1522;
+  --exito: #4ade80;
+  --exito-suave: #0f2a1d;
+  --sombra: 0 8px 28px rgba(0, 0, 0, 0.45);
+  --brillo: 0 0 16px rgba(74, 222, 128, 0.35);
+  --rejilla: rgba(34, 211, 238, 0.05);
+  --degradado-marca: linear-gradient(90deg, #22d3ee, #a855f7);
+  --degradado-zona: linear-gradient(180deg, #fde047, #f97316);
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--acento);
+}
+
+.oculto {
+  display: none !important;
+}
+
+.texto-suave {
+  color: var(--texto-suave);
+}
+
+.solo-lectores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ------------------------------- Encabezado ------------------------------- */
+
+.encabezado {
+  background: var(--superficie);
+  border-bottom: 1px solid var(--borde);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.encabezado__interior {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  flex-wrap: wrap;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.marca img {
+  width: 42px;
+  height: 42px;
+}
+
+.marca__nombre {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.marca__lema {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.nav form {
+  margin: 0;
+  display: flex;
+}
+
+.nav__enlace {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: none;
+  color: var(--texto);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav__enlace:hover {
+  background: var(--superficie-2);
+}
+
+.nav__enlace--activo {
+  background: var(--acento-suave);
+  color: var(--acento-fuerte);
+}
+
+.nav__enlace--secundario {
+  color: var(--texto-suave);
+  font-weight: 500;
+}
+
+.nav__contador {
+  min-width: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--acento);
+  color: var(--sobre-acento);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.nav__tema {
+  border-color: var(--borde);
+}
+
+/* -------------------------------- Contenido ------------------------------- */
+
+.contenido {
+  flex: 1;
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 28px 16px 48px;
+}
+
+.contenido--angosto {
+  max-width: 640px;
+}
+
+.titulo-pagina {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px 20px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.titulo-pagina p {
+  color: var(--texto-suave);
+  margin-top: 4px;
+}
+
+.acciones {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tarjeta {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 22px;
+}
+
+/* ----------------------------------- Pie ---------------------------------- */
+
+.pie {
+  border-top: 1px solid var(--borde);
+  background: var(--superficie);
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+.pie__interior {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 6px 20px;
+  flex-wrap: wrap;
+}
+
+.pie strong {
+  color: var(--texto);
+}
+
+/* -------------------------------- Responsive ------------------------------ */
+
+@media (max-width: 640px) {
+  .encabezado__interior {
+    justify-content: center;
+  }
+
+  .nav {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav__enlace {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  .contenido {
+    padding: 20px 14px 40px;
+  }
+
+  .tarjeta {
+    padding: 18px;
+  }
+
+  .modal__acciones .btn {
+    flex: 1;
+  }
+
+  .pie__interior {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* --------------------------- Identidad Gaming Zone ------------------------ */
+
+/* Rejilla tenue de fondo, como la del logo */
+body {
+  background-image: linear-gradient(var(--rejilla) 1px, transparent 1px),
+    linear-gradient(90deg, var(--rejilla) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-attachment: fixed;
+}
+
+/* Línea de neón debajo del encabezado */
+.encabezado::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: var(--degradado-marca);
+}
+
+.marca img {
+  border-radius: 10px;
+}
+
+.marca__nombre {
+  font-style: italic;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* "GAMING" y "ZONE" con los degradados del logo */
+.marca__gaming,
+.marca__zone {
+  padding-right: 0.08em;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.marca__gaming {
+  background-image: var(--degradado-marca);
+}
+
+.marca__zone {
+  background-image: var(--degradado-zona);
+}
+
+h1 {
+  font-style: italic;
+  text-transform: uppercase;
+}

@@ -1,0 +1,285 @@
+/* ==========================================================================
+   Gaming Zone - Componentes reutilizables: botones, formularios, avisos,
+   insignias y modal. Los usan la tienda y el panel de administración.
+   ========================================================================== */
+
+/* --------------------------------- Botones -------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 9px 18px;
+  border: 1px solid transparent;
+  border-radius: var(--radio-chico);
+  font: inherit;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn--primario {
+  background: var(--acento);
+  color: var(--sobre-acento);
+}
+
+.btn--primario:hover:not(:disabled) {
+  background: var(--acento-fuerte);
+}
+
+.btn--secundario {
+  background: var(--superficie);
+  border-color: var(--borde);
+  color: var(--texto);
+}
+
+.btn--secundario:hover:not(:disabled) {
+  background: var(--superficie-2);
+}
+
+.btn--peligro {
+  background: var(--peligro-suave);
+  border-color: transparent;
+  color: var(--peligro);
+}
+
+.btn--peligro:hover:not(:disabled) {
+  border-color: var(--peligro);
+}
+
+.btn--exito {
+  background: var(--exito-suave);
+  color: var(--exito);
+}
+
+.btn--exito:hover:not(:disabled) {
+  border-color: var(--exito);
+}
+
+.btn--fantasma {
+  background: none;
+  color: var(--texto-suave);
+  font-weight: 500;
+}
+
+.btn--fantasma:hover:not(:disabled) {
+  background: var(--superficie-2);
+}
+
+.btn--chico {
+  min-height: 36px;
+  padding: 5px 12px;
+  font-size: 0.9rem;
+}
+
+.btn--grande {
+  min-height: 54px;
+  padding: 12px 26px;
+  font-size: 1.08rem;
+}
+
+.btn--bloque {
+  width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 2px;
+}
+
+/* ------------------------------- Formularios ------------------------------ */
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.campo label,
+.campo__etiqueta {
+  font-weight: 650;
+  font-size: 0.95rem;
+}
+
+.campo__ayuda {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.campo input[type='text'],
+.campo input[type='email'],
+.campo input[type='password'],
+.campo input[type='number'],
+.campo input[type='file'],
+.campo select,
+.campo textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-chico);
+  background: var(--superficie);
+  color: var(--texto);
+  font: inherit;
+}
+
+.campo textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.campo input[type='range'] {
+  width: 100%;
+  accent-color: var(--acento);
+}
+
+.campo--invalido input,
+.campo--invalido select,
+.campo--invalido textarea {
+  border-color: var(--peligro);
+}
+
+.campo__error {
+  color: var(--peligro);
+  font-size: 0.88rem;
+  font-weight: 600;
+  min-height: 0;
+}
+
+.casilla {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.casilla input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--acento);
+}
+
+/* --------------------------------- Avisos --------------------------------- */
+
+.aviso {
+  padding: 12px 16px;
+  border-radius: var(--radio-chico);
+  margin-bottom: 18px;
+  font-weight: 550;
+}
+
+.aviso--error {
+  background: var(--peligro-suave);
+  color: var(--peligro);
+}
+
+.aviso--exito {
+  background: var(--exito-suave);
+  color: var(--exito);
+}
+
+.aviso ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.insignia {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.insignia--activo {
+  background: var(--exito-suave);
+  color: var(--exito);
+}
+
+.insignia--inactivo {
+  background: var(--peligro-suave);
+  color: var(--peligro);
+}
+
+.insignia--neutra {
+  background: var(--acento-suave);
+  color: var(--acento-fuerte);
+}
+
+.vacio {
+  text-align: center;
+  padding: 36px 16px;
+  color: var(--texto-suave);
+}
+
+/* ---------------------------------- Modal --------------------------------- */
+
+.modal-fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(10, 10, 25, 0.6);
+}
+
+.modal {
+  width: 100%;
+  max-width: 440px;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.modal h2 {
+  margin-bottom: 8px;
+}
+
+.modal p {
+  color: var(--texto-suave);
+}
+
+.modal__acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+
+/* --------------------------- Identidad Gaming Zone ------------------------ */
+
+/* Resplandor de neón en la acción principal (solo en el tema oscuro) */
+.btn--primario {
+  box-shadow: var(--brillo);
+}
+
+.insignia--plataforma {
+  background: var(--cian-suave);
+  color: var(--cian);
+}
+
+.aviso--info {
+  background: var(--cian-suave);
+  color: var(--cian);
+}
