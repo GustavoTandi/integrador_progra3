@@ -22,7 +22,7 @@ function renderizarTicket() {
       <tr>
         <td>
           ${escaparHTML(producto.nombre)}
-          <small>${escaparHTML(nombreCategoria(producto.categoria))} · ${escaparHTML(producto.plataforma)} · ${formatearPrecio(producto.precioUnitario)} c/u</small>
+          <small>${escaparHTML(nombreCategoria(producto.categoria))} · ${formatearPrecio(producto.precioUnitario)} c/u</small>
         </td>
         <td class="num">${producto.cantidad}</td>
         <td class="num">${formatearPrecio(producto.subtotal)}</td>
@@ -95,7 +95,7 @@ function descargarPDF() {
     y += lineas[indice].length * 4;
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(7.5);
-    doc.text(`${producto.plataforma} · ${precioPDF(producto.precioUnitario)} c/u`, MARGEN, y);
+    doc.text(`${precioPDF(producto.precioUnitario)} c/u`, MARGEN, y);
     y += 6;
   });
   separador(y - 2);
