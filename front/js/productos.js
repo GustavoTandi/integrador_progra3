@@ -90,10 +90,8 @@ function renderizarProductos(productos) {
         <div class="producto__cuerpo">
           <span class="producto__marca">
             ${escaparHTML(nombreCategoria(producto.categoria))}
-            <span class="insignia insignia--plataforma">${escaparHTML(producto.plataforma)}</span>
           </span>
           <h3 class="producto__nombre">${escaparHTML(producto.nombre)}</h3>
-          <p class="producto__descripcion">${escaparHTML(producto.descripcion)}</p>
           <div class="producto__pie">
             <span class="producto__precio">${formatearPrecio(producto.precio)}</span>
             <a class="producto__detalle" href="detalle.html?id=${producto.id}">Ver detalle</a>

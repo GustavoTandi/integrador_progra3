@@ -21,9 +21,7 @@ function renderizarDetalle() {
     <div class="detalle__datos tarjeta">
       <span class="insignia insignia--plataforma" style="width: fit-content">${escaparHTML(nombreCategoria(p.categoria))}</span>
       <h1>${escaparHTML(p.nombre)}</h1>
-      <p class="texto-suave">${escaparHTML(p.descripcion)}</p>
       <dl class="detalle__ficha">
-        <dt>Plataforma</dt><dd>${escaparHTML(p.plataforma)}</dd>
         <dt>Tipo</dt><dd>${escaparHTML(nombreCategoria(p.categoria))}</dd>
         <dt>Código</dt><dd>#${p.id}</dd>
       </dl>

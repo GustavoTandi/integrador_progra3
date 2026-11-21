@@ -64,7 +64,7 @@ function salirDelSistema() {
 
 /* --------------------------------- Carrito ------------------------------- */
 
-// El carrito es una lista de { id, nombre, plataforma, categoria, precio, imagen, cantidad }
+// El carrito es una lista de { id, nombre, categoria, precio, imagen, cantidad }
 const Carrito = {
   CANTIDAD_MAXIMA: 99,
 
@@ -93,7 +93,6 @@ const Carrito = {
       carrito.push({
         id: producto.id,
         nombre: producto.nombre,
-        plataforma: producto.plataforma,
         categoria: producto.categoria,
         precio: producto.precio,
         imagen: producto.imagen,
@@ -197,7 +196,7 @@ function iniciarPantallaCarrito() {
           <img src="${escaparHTML(urlImagen(producto.imagen))}" alt="Imagen de ${escaparHTML(producto.nombre)}">
           <div>
             <h3>${escaparHTML(producto.nombre)}</h3>
-            <small>${escaparHTML(nombreCategoria(producto.categoria))} · ${escaparHTML(producto.plataforma)} · ${formatearPrecio(producto.precio)} c/u</small>
+            <small>${escaparHTML(nombreCategoria(producto.categoria))} · ${formatearPrecio(producto.precio)} c/u</small>
           </div>
           <div class="carrito__lado">
             <span class="carrito__subtotal">${formatearPrecio(producto.precio * producto.cantidad)}</span>
