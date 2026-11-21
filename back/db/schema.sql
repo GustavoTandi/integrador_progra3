@@ -13,6 +13,8 @@ CREATE TABLE usuarios (
 CREATE TABLE productos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(150) NOT NULL,
+    plataforma VARCHAR(100) NOT NULL,
+    descripcion TEXT NOT NULL,
     imagen VARCHAR(255),
     categoria VARCHAR(100) NOT NULL,
     precio DECIMAL(10, 2) NOT NULL,
