@@ -1,8 +1,8 @@
 import sequelize from "../config/database.js";
 import { Producto, Venta, VentaProducto } from "../models/index.js";
 
-// DECIMAL(10, 2) admite hasta 99.999.999,99 pesos.
-const MAXIMO_TOTAL_CENTAVOS = 9_999_999_999;
+// Límite de DECIMAL(14, 2), expresado en centavos.
+const MAXIMO_TOTAL_CENTAVOS = 99_999_999_999_999;
 
 export async function crearVenta(req, res) {
     const { nombreCliente, productos } = req.venta;
@@ -56,10 +56,11 @@ export async function crearVenta(req, res) {
                 precio_total: total.toFixed(2),
             }, { transaction });
 
-            await VentaProducto.bulkCreate(detalle.map(({ id, cantidad }) => ({
+            await VentaProducto.bulkCreate(detalle.map(({ id, cantidad, precioUnitario }) => ({
                 id_venta: venta.id,
                 id_producto: id,
                 cantidad,
+                precio_unitario: precioUnitario.toFixed(2),
             })), { transaction });
 
             return { datos: {
