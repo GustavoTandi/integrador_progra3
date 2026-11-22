@@ -1,0 +1,7 @@
+{
+  "name": "gaming-zone",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix ./back run dev"
+  }
+}

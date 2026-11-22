@@ -16,7 +16,7 @@ function renderizarDetalle() {
   document.title = `${p.nombre} · ${CONFIG.EMPRESA}`;
   contenedorDetalle.innerHTML = `
     <div class="detalle__imagen">
-      <img src="${escaparHTML(urlImagen(p.imagen))}" alt="Imagen de ${escaparHTML(p.nombre)}">
+      <img src="${escaparHTML(p.imagen)}" alt="Imagen de ${escaparHTML(p.nombre)}">
     </div>
     <div class="detalle__datos tarjeta">
       <span class="insignia insignia--plataforma" style="width: fit-content">${escaparHTML(nombreCategoria(p.categoria))}</span>

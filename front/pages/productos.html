@@ -24,7 +24,7 @@
         <a class="nav__enlace nav__enlace--activo" href="../pages/productos.html">Productos</a>
         <a class="nav__enlace" href="../pages/carrito.html">Carrito <span class="nav__contador" id="nav-contador">0</span></a>
         <button type="button" class="nav__enlace nav__enlace--secundario" id="nav-cancelar">Cancelar compra</button>
-        <a class="nav__enlace nav__enlace--secundario" data-enlace-admin href="http://localhost:3000/admin/login">Administración</a>
+        <a class="nav__enlace nav__enlace--secundario" href="/admin/login">Administración</a>
         <button type="button" class="nav__enlace nav__tema" id="btn-tema" aria-label="Cambiar tema">Tema</button>
       </nav>
     </div>
@@ -42,7 +42,7 @@
 
     <div class="aviso aviso--error oculto" id="aviso-error" role="alert"></div>
     <div class="aviso aviso--info oculto" id="aviso-local" role="status">
-      Sin conexión con el servidor: se muestra el catálogo de ejemplo. Para comprar, encendé el backend.
+      Se muestra el catálogo de ejemplo. Las compras requieren que la API esté disponible.
     </div>
     <section class="productos" id="productos" aria-live="polite"></section>
     <nav class="paginacion" id="paginacion" aria-label="Páginas de productos"></nav>

@@ -85,7 +85,7 @@ function renderizarProductos(productos) {
       (producto) => `
       <article class="producto ${Carrito.cantidadDe(producto.id) > 0 ? 'producto--en-carrito' : ''}" data-producto="${producto.id}">
         <a class="producto__imagen" href="detalle.html?id=${producto.id}">
-          <img src="${escaparHTML(urlImagen(producto.imagen))}" alt="Imagen de ${escaparHTML(producto.nombre)}" loading="lazy">
+          <img src="${escaparHTML(producto.imagen)}" alt="Imagen de ${escaparHTML(producto.nombre)}" loading="lazy">
         </a>
         <div class="producto__cuerpo">
           <span class="producto__marca">

@@ -10,10 +10,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/assets", express.static(path.join(__dirname, "../front/assets")));
-
-app.get("/", (req, res) => {
-    res.json({ mensaje: "Bienvenido/a" });
-});
+app.use(express.static(path.join(__dirname, "../front")));
 
 export default app;

@@ -1,9 +1,6 @@
 // Configuración del frontend, utilidades compartidas y comunicación con el backend.
 
 const CONFIG = {
-  // URL del backend (API + panel de administración). Es el único lugar donde hay que cambiarla.
-  API_URL: 'http://localhost:3000',
-
   EMPRESA: 'Gaming Zone',
   LEMA: 'Consolas y videojuegos',
 
@@ -61,11 +58,6 @@ function escaparHTML(texto) {
     .replaceAll("'", '&#39;');
 }
 
-// Las imágenes de los productos viven en el servidor backend
-function urlImagen(ruta) {
-  return CONFIG.API_URL + ruta;
-}
-
 function nombreCategoria(id) {
   const categoria = CONFIG.CATEGORIAS.find((c) => c.id === id);
   return categoria ? categoria.singular : id;
@@ -83,18 +75,13 @@ document.addEventListener(
   true
 );
 
-// El botón "Administración" lleva al login del panel, que está en el backend
-document.querySelectorAll('[data-enlace-admin]').forEach((enlace) => {
-  enlace.href = CONFIG.API_URL + '/admin/login';
-});
-
 /* --------------------------------- API ---------------------------------- */
 
 // Hace una petición a la API y devuelve el JSON. Si falla, lanza un Error con el mensaje del servidor.
 async function pedirAPI(ruta, opciones = {}) {
   let respuesta;
   try {
-    respuesta = await fetch(CONFIG.API_URL + ruta, opciones);
+    respuesta = await fetch(ruta, opciones);
   } catch (error) {
     const fallo = new Error(
       'No pudimos conectarnos con el servidor. Verificá que el backend esté encendido.'
@@ -121,13 +108,13 @@ async function pedirAPI(ruta, opciones = {}) {
 }
 
 // Trae una página de productos activos de una categoría.
-// Si el backend no responde, usa el catálogo de respaldo (data/productos.json).
+// Si el listado aún no está disponible, usa el catálogo de respaldo (data/productos.json).
 async function obtenerProductos({ categoria, pagina, limite }) {
   try {
     const parametros = new URLSearchParams({ categoria, pagina, limite });
     return await pedirAPI(`/api/productos?${parametros}`);
   } catch (error) {
-    if (!error.sinConexion) throw error;
+    if (!error.sinConexion && error.estado !== 404) throw error;
     return obtenerProductosLocales({ categoria, pagina, limite });
   }
 }

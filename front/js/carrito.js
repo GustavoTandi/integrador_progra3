@@ -193,7 +193,7 @@ function iniciarPantallaCarrito() {
       .map(
         (producto) => `
         <li class="carrito__item">
-          <img src="${escaparHTML(urlImagen(producto.imagen))}" alt="Imagen de ${escaparHTML(producto.nombre)}">
+          <img src="${escaparHTML(producto.imagen)}" alt="Imagen de ${escaparHTML(producto.nombre)}">
           <div>
             <h3>${escaparHTML(producto.nombre)}</h3>
             <small>${escaparHTML(nombreCategoria(producto.categoria))} · ${formatearPrecio(producto.precio)} c/u</small>
