@@ -9,10 +9,9 @@ const Usuario = sequelize.define(
             allowNull: false,
         },
         mail: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.STRING(120),
             allowNull: false,
             unique: true,
-
         },
         contrasena: {
             type: DataTypes.STRING(255),
@@ -26,7 +25,8 @@ const Usuario = sequelize.define(
     },
     {
         tableName: "usuarios",
-        timestamps: false,
+        timestamps: true,
+        underscored: true,
     }
 );
 
