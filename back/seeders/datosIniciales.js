@@ -17,5 +17,7 @@ try {
     }
 } catch (error) {
     console.error("Error en el seeder:", error);
+    process.exitCode = 1;
+} finally {
+    await sequelize.close();
 }
-await sequelize.close();

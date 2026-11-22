@@ -6,18 +6,19 @@ const VentaProducto = sequelize.define(
     {
         id_venta: {
             type: DataTypes.INTEGER,
-            primaryKey: true,
             allowNull: false,
         },
         id_producto: {
             type: DataTypes.INTEGER,
-            primaryKey: true,
             allowNull: false,
         },
         cantidad: {
             type: DataTypes.INTEGER,
             allowNull: false,
             defaultValue: 1,
+        },
+        precio_unitario: {
+            type: DataTypes.DECIMAL(12, 2),
         },
     },
     {

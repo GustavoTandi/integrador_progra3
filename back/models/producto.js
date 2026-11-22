@@ -15,8 +15,14 @@ const Producto = sequelize.define(
             type: DataTypes.STRING(100),
             allowNull: false,
         },
+        plataforma: {
+            type: DataTypes.STRING(40),
+        },
+        descripcion: {
+            type: DataTypes.STRING(300),
+        },
         precio: {
-            type: DataTypes.DECIMAL(10, 2),
+            type: DataTypes.DECIMAL(12, 2),
             allowNull: false,
         },
         activo: {
@@ -27,7 +33,8 @@ const Producto = sequelize.define(
     },
     {
         tableName: "productos",
-        timestamps: false,
+        timestamps: true,
+        underscored: true,
     }
 );
 

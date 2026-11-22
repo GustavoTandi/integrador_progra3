@@ -14,7 +14,7 @@ const Venta = sequelize.define(
             defaultValue: DataTypes.NOW
         },
         precio_total: {
-            type: DataTypes.DECIMAL(10, 2),
+            type: DataTypes.DECIMAL(14, 2),
             allowNull: false,
         },
     },

@@ -43,7 +43,6 @@ function descargarPDF() {
   const ANCHO = 80;
   const MARGEN = 6;
   const DERECHA = ANCHO - MARGEN;
-  const precioPDF = (valor) => '$ ' + Math.round(valor).toLocaleString('es-AR');
 
   // Primero se calcula el alto: cada producto ocupa una o más líneas según el largo del nombre
   const medidor = new jsPDF({ unit: 'mm', format: [ANCHO, 100] });
@@ -91,11 +90,11 @@ function descargarPDF() {
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(9);
     doc.text(lineas[indice], MARGEN, y);
-    doc.text(precioPDF(producto.subtotal), DERECHA, y, { align: 'right' });
+    doc.text(formatearPrecio(producto.subtotal), DERECHA, y, { align: 'right' });
     y += lineas[indice].length * 4;
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(7.5);
-    doc.text(`${precioPDF(producto.precioUnitario)} c/u`, MARGEN, y);
+    doc.text(`${formatearPrecio(producto.precioUnitario)} c/u`, MARGEN, y);
     y += 6;
   });
   separador(y - 2);
@@ -104,7 +103,7 @@ function descargarPDF() {
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(12);
   doc.text('TOTAL', MARGEN, y);
-  doc.text(precioPDF(ticket.total), DERECHA, y, { align: 'right' });
+  doc.text(formatearPrecio(ticket.total), DERECHA, y, { align: 'right' });
 
   y += 9;
   doc.setFont('helvetica', 'normal');
