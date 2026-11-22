@@ -34,3 +34,25 @@ export async function listarProductos(req, res) {
         });
     }
 }
+
+export async function obtenerProducto(req, res) {
+    try {
+        const producto = await Producto.findOne({
+            where: { id: req.idProducto, activo: true },
+        });
+
+        if (!producto) {
+            return res.status(404).json({
+                ok: false,
+                mensaje: "Producto no disponible.",
+            });
+        }
+        return res.json({ok: true,datos: producto,});
+    } catch (error) {
+        console.error("Error al obtener el producto:", error);
+        return res.status(500).json({
+            ok: false,
+            mensaje: "No se pudo obtener el producto.",
+        });
+    }
+}

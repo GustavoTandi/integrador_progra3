@@ -21,3 +21,15 @@ export function validarListadoProductos(req, res, next) {
     req.listado = { categoria, pagina, limite };
     next();
 }
+
+export function validarIdProducto(req, res, next) {
+    const id = Number(req.params.id);
+    if (!Number.isInteger(id) || id < 1) {
+        return res.status(400).json({
+            ok: false,
+            mensaje: "El id del producto no es válido.",
+        });
+    }
+    req.idProducto = id;
+    next();
+}
