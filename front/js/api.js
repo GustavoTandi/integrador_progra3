@@ -15,7 +15,7 @@ const CONFIG = {
 
   // Requerimiento extra de final: al salir del ticket se pasa por la pantalla de encuesta.
   // En false, el botón "Salir" vuelve directo a la bienvenida.
-  ENCUESTA_HABILITADA: true,
+  ENCUESTA_HABILITADA: false,
 };
 
 // index.html está en la raíz y el resto de las pantallas en /pages: con esto las rutas
@@ -35,7 +35,8 @@ const PAGINAS = {
 const formatoPrecio = new Intl.NumberFormat('es-AR', {
   style: 'currency',
   currency: 'ARS',
-  maximumFractionDigits: 0,
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 2,
 });
 
 function formatearPrecio(valor) {
