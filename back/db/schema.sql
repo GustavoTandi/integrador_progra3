@@ -19,8 +19,6 @@ CREATE TABLE productos (
     categoria VARCHAR(100) NOT NULL,
     precio DECIMAL(12, 2) NOT NULL,
     activo BOOLEAN NOT NULL DEFAULT TRUE,
-    plataforma VARCHAR(40) NULL,
-    descripcion VARCHAR(300) NULL,
     created_at DATETIME NULL,
     updated_at DATETIME NULL
 );

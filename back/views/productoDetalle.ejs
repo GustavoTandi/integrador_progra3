@@ -1,0 +1,18 @@
+<%- include("header") %>
+<main class="contenido admin-contenido">
+    <section class="tarjeta admin-formulario">
+        <a class="admin-volver" href="/admin/dashboard">Volver a productos</a>
+        <h1><%= producto.nombre %></h1>
+        <div class="admin-detalle">
+            <img class="admin-detalle__imagen" src="<%= producto.imagen || '/assets/icon-192.png' %>" alt="<%= producto.nombre %>">
+            <dl>
+                <dt>ID</dt><dd><%= producto.id %></dd>
+                <dt>Categoría</dt><dd><%= categorias.find(({ id }) => id === producto.categoria)?.nombre || producto.categoria %></dd>
+                <dt>Precio</dt><dd><%= formatoPrecio.format(producto.precio) %></dd>
+                <dt>Estado</dt><dd><%= producto.activo ? 'Activo' : 'Inactivo' %></dd>
+            </dl>
+        </div>
+        <div><a class="btn btn--primario" href="/admin/productos/<%= producto.id %>/editar">Editar producto</a></div>
+    </section>
+</main>
+<%- include("footer") %>

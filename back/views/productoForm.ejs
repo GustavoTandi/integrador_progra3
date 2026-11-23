@@ -1,0 +1,46 @@
+<%- include("header") %>
+<main class="contenido admin-contenido">
+    <section class="tarjeta admin-formulario">
+        <a class="admin-volver" href="/admin/dashboard">Volver a productos</a>
+        <h1><%= titulo %></h1>
+        <% if (error) { %>
+            <p class="aviso aviso--error" role="alert"><%= error %></p>
+        <% } %>
+        <form method="post" enctype="multipart/form-data" class="admin-campos"
+            action="<%= editando ? '/admin/productos/' + producto.id + '/editar' : '/admin/productos' %>">
+            <input type="hidden" name="_csrf" value="<%= csrf %>">
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" maxlength="150" value="<%= producto.nombre ?? '' %>" required>
+            </div>
+            <div class="admin-form-grid">
+                <div class="campo">
+                    <label for="categoria">Categoría</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="">Elegí una categoría</option>
+                        <% for (const categoria of categorias) { %>
+                            <option value="<%= categoria.id %>" <%= producto.categoria === categoria.id ? 'selected' : '' %>><%= categoria.nombre %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="precio">Precio en pesos</label>
+                    <input type="number" id="precio" name="precio" min="0.01" max="9999999999.99" step="0.01" value="<%= producto.precio ?? '' %>" required>
+                </div>
+            </div>
+            <div class="campo">
+                <label for="imagen"><%= editando ? 'Reemplazar imagen' : 'Imagen del producto' %></label>
+                <% if (producto.imagen) { %>
+                    <img class="admin-vista-imagen" src="<%= producto.imagen %>" alt="Imagen actual">
+                <% } %>
+                <input type="file" id="imagen" name="imagen" accept="image/jpeg,image/png,image/webp" <%= editando ? '' : 'required' %>>
+                <small class="campo__ayuda">JPG, PNG o WEBP. Hasta 2 MB.</small>
+            </div>
+            <div class="admin-acciones">
+                <button type="submit" class="btn btn--primario"><%= editando ? 'Guardar cambios' : 'Agregar producto' %></button>
+                <a class="btn btn--fantasma" href="/admin/dashboard">Cancelar</a>
+            </div>
+        </form>
+    </section>
+</main>
+<%- include("footer") %>
