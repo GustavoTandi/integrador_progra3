@@ -6,7 +6,6 @@ const contenedorPestanias = document.getElementById('pestanias');
 const contenedorProductos = document.getElementById('productos');
 const contenedorPaginacion = document.getElementById('paginacion');
 const avisoError = document.getElementById('aviso-error');
-const avisoLocal = document.getElementById('aviso-local');
 const barraCarrito = document.getElementById('barra-carrito');
 const barraResumen = document.getElementById('barra-resumen');
 
@@ -63,7 +62,6 @@ async function cargarProductos() {
     }
 
     avisoError.classList.add('oculto');
-    avisoLocal.classList.toggle('oculto', !respuesta.local);
     renderizarProductos(datos);
     renderizarPaginacion(paginacion);
   } catch (error) {
@@ -124,7 +122,7 @@ function actualizarBarraCarrito() {
   barraResumen.innerHTML = `<strong>${unidades}</strong> ${unidades === 1 ? 'producto' : 'productos'} en el carrito · <strong>${formatearPrecio(Carrito.totalPrecio())}</strong>`;
 }
 
-/* -------------------------------- Eventos -------------------------------- */
+/* Eventos */
 
 // Cambio de categoría: siempre se vuelve a la página 1
 contenedorPestanias.addEventListener('click', (evento) => {
@@ -163,7 +161,7 @@ contenedorProductos.addEventListener('click', (evento) => {
   actualizarBarraCarrito();
 });
 
-/* --------------------------------- Inicio -------------------------------- */
+/* Inicio */
 
 if (nombreCliente) {
   document.getElementById('saludo').textContent = `Hola, ${nombreCliente}`;

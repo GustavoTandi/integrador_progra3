@@ -1,8 +1,6 @@
 // Modal reutilizable para confirmar acciones y mostrar mensajes.
 
 // Muestra un modal y devuelve una promesa: true si se aceptó, false si se canceló.
-// Uso:  const confirmado = await mostrarModal({ titulo, mensaje });
-// Con textoCancelar vacío el modal tiene un solo botón (sirve para mensajes).
 function mostrarModal({ titulo, mensaje, textoAceptar = 'Confirmar', textoCancelar = 'Cancelar' }) {
   return new Promise((resolver) => {
     const fondo = document.createElement('div');

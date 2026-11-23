@@ -25,7 +25,7 @@ function guardarStorage(clave, valor) {
   }
 }
 
-/* --------------------------- Sesión del cliente -------------------------- */
+/* Sesión del cliente */
 
 const Sesion = {
   obtenerNombre() {
@@ -59,10 +59,10 @@ function exigirNombre() {
 // Termina la visita del cliente: el autoservicio queda listo para la próxima persona
 function salirDelSistema() {
   Sesion.reiniciar();
-  window.location.href = CONFIG.ENCUESTA_HABILITADA ? PAGINAS.encuesta : PAGINAS.inicio;
+  window.location.href = PAGINAS.inicio;
 }
 
-/* --------------------------------- Carrito ------------------------------- */
+/* Carrito */
 
 // El carrito es una lista de { id, nombre, categoria, precio, imagen, cantidad }
 const Carrito = {
@@ -143,7 +143,7 @@ function htmlControlesCarrito(id) {
     <button type="button" class="btn btn--peligro btn--chico" data-accion="quitar" data-id="${id}">Quitar</button>`;
 }
 
-/* ------------------------ Barra de navegación ---------------------------- */
+/* Barra de navegación */
 
 function actualizarContadorCarrito() {
   const contador = document.getElementById('nav-contador');
@@ -169,7 +169,7 @@ if (botonCancelarCompra) {
   });
 }
 
-/* --------------------------- Pantalla del carrito ------------------------ */
+/* Pantalla del carrito */
 
 function iniciarPantallaCarrito() {
   const nombreCliente = exigirNombre();

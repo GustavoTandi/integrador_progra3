@@ -1,5 +1,3 @@
-// Pantalla de bienvenida: pide el nombre del cliente antes de dejarlo ver los productos.
-
 // Cada vez que se llega a la bienvenida, el autoservicio vuelve a comenzar
 Sesion.reiniciar();
 

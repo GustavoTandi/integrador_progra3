@@ -1,9 +1,9 @@
-/* ==========================================================================
-   Gaming Zone - Componentes reutilizables: botones, formularios, avisos,
+/* 
+   Componentes: botones, formularios, avisos,
    insignias y modal. Los usan la tienda y el panel de administración.
-   ========================================================================== */
+*/
 
-/* --------------------------------- Botones -------------------------------- */
+/* Botones */
 
 .btn {
   display: inline-flex;
@@ -99,7 +99,7 @@
   outline-offset: 2px;
 }
 
-/* ------------------------------- Formularios ------------------------------ */
+/* Formularios */
 
 .campo {
   display: flex;
@@ -108,8 +108,7 @@
   margin-bottom: 16px;
 }
 
-.campo label,
-.campo__etiqueta {
+.campo label{
   font-weight: 650;
   font-size: 0.95rem;
 }
@@ -124,8 +123,7 @@
 .campo input[type='password'],
 .campo input[type='number'],
 .campo input[type='file'],
-.campo select,
-.campo textarea {
+.campo select {
   width: 100%;
   min-height: 46px;
   padding: 10px 12px;
@@ -136,19 +134,8 @@
   font: inherit;
 }
 
-.campo textarea {
-  min-height: 110px;
-  resize: vertical;
-}
-
-.campo input[type='range'] {
-  width: 100%;
-  accent-color: var(--acento);
-}
-
 .campo--invalido input,
-.campo--invalido select,
-.campo--invalido textarea {
+.campo--invalido select{
   border-color: var(--peligro);
 }
 
@@ -159,21 +146,7 @@
   min-height: 0;
 }
 
-.casilla {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.casilla input {
-  width: 20px;
-  height: 20px;
-  accent-color: var(--acento);
-}
-
-/* --------------------------------- Avisos --------------------------------- */
+/* Avisos */
 
 .aviso {
   padding: 12px 16px;
@@ -206,28 +179,13 @@
   white-space: nowrap;
 }
 
-.insignia--activo {
-  background: var(--exito-suave);
-  color: var(--exito);
-}
-
-.insignia--inactivo {
-  background: var(--peligro-suave);
-  color: var(--peligro);
-}
-
-.insignia--neutra {
-  background: var(--acento-suave);
-  color: var(--acento-fuerte);
-}
-
 .vacio {
   text-align: center;
   padding: 36px 16px;
   color: var(--texto-suave);
 }
 
-/* ---------------------------------- Modal --------------------------------- */
+/* Modal */
 
 .modal-fondo {
   position: fixed;
@@ -266,20 +224,12 @@
   margin-top: 22px;
 }
 
-
-/* --------------------------- Identidad Gaming Zone ------------------------ */
-
-/* Resplandor de neón en la acción principal (solo en el tema oscuro) */
+/* Resplandor en la acción principal (solo en el tema oscuro) */
 .btn--primario {
   box-shadow: var(--brillo);
 }
 
 .insignia--plataforma {
-  background: var(--cian-suave);
-  color: var(--cian);
-}
-
-.aviso--info {
   background: var(--cian-suave);
   color: var(--cian);
 }

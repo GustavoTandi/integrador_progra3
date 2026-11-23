@@ -1,25 +1,20 @@
-// Configuración del frontend, utilidades compartidas y comunicación con el backend.
+// Configuración del frontend, utilidades y comunicación con el back.
 
 const CONFIG = {
   EMPRESA: 'Gaming Zone',
   LEMA: 'Consolas y videojuegos',
 
-  // Los dos tipos de productos que vende la tienda
+  // Tipos de productos
   CATEGORIAS: [
     { id: 'consola', nombre: 'Consolas', singular: 'Consola' },
     { id: 'videojuego', nombre: 'Videojuegos', singular: 'Videojuego' },
   ],
 
-  // Cantidad de productos por página en la pantalla de productos
-  PRODUCTOS_POR_PAGINA: 6,
-
-  // Requerimiento extra de final: al salir del ticket se pasa por la pantalla de encuesta.
-  // En false, el botón "Salir" vuelve directo a la bienvenida.
-  ENCUESTA_HABILITADA: false,
+  // Cantidad de productos por página
+  PRODUCTOS_POR_PAGINA: 6
 };
 
-// index.html está en la raíz y el resto de las pantallas en /pages: con esto las rutas
-// funcionan desde cualquiera de los dos lugares.
+// Con esto las rutas funcionan desde index.html y desde /pages
 const RAIZ = window.location.pathname.includes('/pages/') ? '../' : '';
 
 const PAGINAS = {
@@ -27,10 +22,9 @@ const PAGINAS = {
   productos: RAIZ + 'pages/productos.html',
   carrito: RAIZ + 'pages/carrito.html',
   ticket: RAIZ + 'pages/ticket.html',
-  encuesta: RAIZ + 'pages/encuesta.html',
 };
 
-/* ------------------------------ Utilidades ------------------------------ */
+/* Utilidades */
 
 const formatoPrecio = new Intl.NumberFormat('es-AR', {
   style: 'currency',
@@ -49,7 +43,7 @@ function formatearFecha(fecha) {
   );
 }
 
-// Evita que un texto venido de la API se interprete como HTML (protección contra XSS)
+// Evita que un texto venido de la API se interprete como HTML
 function escaparHTML(texto) {
   return String(texto)
     .replaceAll('&', '&amp;')
@@ -64,7 +58,7 @@ function nombreCategoria(id) {
   return categoria ? categoria.singular : id;
 }
 
-// Si una imagen no carga (por ejemplo, sin conexión con el backend), se muestra el logo
+// Si una imagen no carga, se muestra el logo
 document.addEventListener(
   'error',
   (evento) => {
@@ -76,7 +70,7 @@ document.addEventListener(
   true
 );
 
-/* --------------------------------- API ---------------------------------- */
+/* API */
 
 // Hace una petición a la API y devuelve el JSON. Si falla, lanza un Error con el mensaje del servidor.
 async function pedirAPI(ruta, opciones = {}) {
@@ -87,7 +81,6 @@ async function pedirAPI(ruta, opciones = {}) {
     const fallo = new Error(
       'No pudimos conectarnos con el servidor. Verificá que el backend esté encendido.'
     );
-    fallo.sinConexion = true;
     throw fallo;
   }
 
@@ -108,34 +101,7 @@ async function pedirAPI(ruta, opciones = {}) {
   return resultado;
 }
 
-// Trae una página de productos activos de una categoría.
-// Si el listado aún no está disponible, usa el catálogo de respaldo (data/productos.json).
 async function obtenerProductos({ categoria, pagina, limite }) {
-  try {
-    const parametros = new URLSearchParams({ categoria, pagina, limite });
-    return await pedirAPI(`/api/productos?${parametros}`);
-  } catch (error) {
-    if (!error.sinConexion && error.estado !== 404) throw error;
-    return obtenerProductosLocales({ categoria, pagina, limite });
-  }
-}
-
-// Misma respuesta que la API, pero armada en el navegador con el JSON hardcodeado
-async function obtenerProductosLocales({ categoria, pagina, limite }) {
-  const respuesta = await fetch(RAIZ + 'data/productos.json');
-  const catalogo = await respuesta.json();
-  const activos = catalogo.filter((p) => p.activo && p.categoria === categoria);
-  const inicio = (pagina - 1) * limite;
-
-  return {
-    ok: true,
-    local: true, // avisa a la pantalla que estos datos no vienen del servidor
-    datos: activos.slice(inicio, inicio + limite),
-    paginacion: {
-      pagina,
-      limite,
-      total: activos.length,
-      totalPaginas: Math.max(1, Math.ceil(activos.length / limite)),
-    },
-  };
+  const parametros = new URLSearchParams({ categoria, pagina, limite });
+  return pedirAPI(`/api/productos?${parametros}`);
 }

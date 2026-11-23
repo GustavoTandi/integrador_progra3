@@ -1,4 +1,4 @@
-// Tema claro / oscuro. Se carga en el <head> para aplicar el tema antes de pintar la página
+// Tema claro / oscuro
 // (así no parpadea) y se guarda en localStorage para mantenerlo al recargar.
 (function () {
   const CLAVE = 'gamingzone_tema';
@@ -12,7 +12,6 @@
   }
 
   function aplicarTema(tema) {
-    // Cambiar de tema es cambiar un atributo de <html>: el CSS hace el resto
     document.documentElement.dataset.tema = tema;
     const boton = document.getElementById('btn-tema');
     if (boton) {
@@ -25,7 +24,7 @@
   aplicarTema(temaActual);
 
   document.addEventListener('DOMContentLoaded', function () {
-    aplicarTema(temaActual); // ahora que existe el botón, se le pone el texto correcto
+    aplicarTema(temaActual);
     const boton = document.getElementById('btn-tema');
     if (!boton) return;
     boton.addEventListener('click', function () {

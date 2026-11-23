@@ -1,8 +1,8 @@
-/* ==========================================================================
-   Gaming Zone - Estilos de cada pantalla de la tienda (se suman a base.css y componentes.css)
-   ========================================================================== */
+/* 
+  Estilos de cada pantalla de la tienda (se suman a base.css y componentes.css)
+ */
 
-/* ------------------------------- Bienvenida ------------------------------- */
+/* Bienvenida */
 
 .bienvenida {
   max-width: 520px;
@@ -11,9 +11,10 @@
 }
 
 .bienvenida__logo {
-  width: 96px;
-  height: 96px;
+  width: min(100%, 300px);
+  height: auto;
   margin: 0 auto 16px;
+  border-radius: var(--radio);
 }
 
 .bienvenida h1 {
@@ -44,6 +45,7 @@
   list-style: none;
   color: var(--texto-suave);
   font-size: 0.9rem;
+  counter-reset: paso;
 }
 
 .bienvenida__pasos li::before {
@@ -61,11 +63,7 @@
   font-size: 0.8rem;
 }
 
-.bienvenida__pasos {
-  counter-reset: paso;
-}
-
-/* -------------------------------- Pestañas -------------------------------- */
+/* Pestañas */
 
 .pestanias {
   display: flex;
@@ -102,7 +100,7 @@
   color: var(--sobre-acento);
 }
 
-/* -------------------------------- Productos ------------------------------- */
+/* Productos */
 
 .productos {
   display: grid;
@@ -122,6 +120,7 @@
 
 .producto--en-carrito {
   border-color: var(--acento);
+  box-shadow: var(--brillo);
 }
 
 .producto__imagen {
@@ -158,12 +157,6 @@
 
 .producto__nombre {
   font-size: 1.1rem;
-}
-
-.producto__descripcion {
-  flex: 1;
-  color: var(--texto-suave);
-  font-size: 0.92rem;
 }
 
 .producto__pie {
@@ -228,7 +221,7 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* ------------------------------- Paginación ------------------------------- */
+/* Paginación */
 
 .paginacion {
   display: flex;
@@ -251,7 +244,7 @@
   color: var(--sobre-acento);
 }
 
-/* --------------------- Barra inferior con el resumen ---------------------- */
+/* Barra inferior con el resumen */
 
 .barra-carrito {
   position: sticky;
@@ -273,7 +266,7 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* --------------------------------- Detalle -------------------------------- */
+/* Detalle */
 
 .detalle {
   display: grid;
@@ -325,7 +318,7 @@
   font-weight: 600;
 }
 
-/* --------------------------------- Carrito -------------------------------- */
+/* Carrito */
 
 .carrito {
   display: grid;
@@ -413,7 +406,7 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* ---------------------------------- Ticket -------------------------------- */
+/* Ticket */
 
 .ticket {
   max-width: 480px;
@@ -522,42 +515,7 @@
   gap: 12px;
 }
 
-/* --------------------------------- Encuesta ------------------------------- */
-
-.encuesta__puntaje {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.encuesta__puntaje output {
-  min-width: 52px;
-  padding: 6px 0;
-  border-radius: var(--radio-chico);
-  background: var(--acento-suave);
-  color: var(--acento-fuerte);
-  font-size: 1.2rem;
-  font-weight: 800;
-  text-align: center;
-}
-
-.encuesta__escala {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  color: var(--texto-suave);
-}
-
-.encuesta__acciones {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-/* -------------------------------- Responsive ------------------------------ */
+/* Responsive */
 
 @media (max-width: 860px) {
   .carrito {
@@ -629,22 +587,10 @@
   }
 }
 
-/* --------------------------- Identidad Gaming Zone ------------------------ */
-
 .producto__precio,
 .detalle__precio,
 .carrito__subtotal {
   color: var(--dorado);
-}
-
-.producto--en-carrito {
-  box-shadow: var(--brillo);
-}
-
-.bienvenida__logo {
-  width: min(100%, 300px);
-  height: auto;
-  border-radius: var(--radio);
 }
 
 .ticket__cabecera img {

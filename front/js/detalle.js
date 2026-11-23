@@ -1,5 +1,3 @@
-// Pantalla de detalle: toma el id del producto de la URL (pages/detalle.html?id=3) y pide sus datos a la API.
-
 const nombreClienteDetalle = exigirNombre();
 
 const contenedorDetalle = document.getElementById('detalle');
