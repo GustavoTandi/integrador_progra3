@@ -1,0 +1,51 @@
+.admin-marca { text-decoration: none; }
+.admin-contenido { display: grid; gap: 1.35rem; align-content: start; }
+.admin-cabecera, .admin-grupo__cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+.admin-cabecera p, .admin-grupo__cabecera span, .admin-vacio { color: var(--texto-suave); }
+.admin-cabecera p { margin: 0.35rem 0 0; }
+.admin-acciones { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+.admin-grupo { padding: 0; overflow: hidden; }
+.admin-grupo__cabecera, .admin-vacio { padding: 1.15rem 1.35rem; margin: 0; }
+.admin-grupo__cabecera { border-bottom: 1px solid var(--borde); }
+.admin-tabla-wrap { overflow-x: auto; }
+.admin-tabla { width: 100%; min-width: 650px; border-collapse: collapse; text-align: left; }
+.admin-tabla th, .admin-tabla td { padding: 0.8rem 1.1rem; vertical-align: middle; }
+.admin-tabla thead { background: var(--superficie-2); color: var(--texto-suave); font-size: 0.875rem; }
+.admin-tabla tbody tr + tr { border-top: 1px solid var(--borde); }
+.admin-producto { display: flex; align-items: center; gap: 0.7rem; color: var(--texto); text-decoration: none; }
+.admin-producto:hover strong { text-decoration: underline; }
+.admin-producto img, .admin-vista-imagen {
+    object-fit: contain;
+    border-radius: 0.4rem;
+    background: var(--superficie-2);
+    flex-shrink: 0;
+}
+.admin-producto small { display: block; color: var(--texto-suave); font-weight: 400; }
+.admin-precio { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.admin-estado { padding: 0.22rem 0.55rem; border-radius: 1rem; background: var(--superficie-2); color: var(--texto-suave); }
+.admin-estado--activo { background: var(--exito-suave); color: var(--exito); }
+.admin-formulario { width: min(100%, 660px); margin: 0 auto; padding: clamp(1.2rem, 5vw, 2rem); display: grid; gap: 1.2rem; }
+.admin-formulario p, .admin-dialogo p { margin: 0; }
+.admin-login { max-width: 440px; margin-block: clamp(1rem, 7vw, 4rem); }
+.admin-login__logo { border-radius: 0.65rem; }
+.admin-campos { display: grid; gap: 1rem; }
+.admin-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+.admin-volver { color: var(--cian); width: fit-content; }
+.admin-vista-imagen { width: 90px; height: 90px; }
+.admin-detalle { display: grid; grid-template-columns: minmax(110px, 1fr) 2fr; gap: 1rem; }
+.admin-detalle__imagen { width: 100%; aspect-ratio: 1; object-fit: contain; border-radius: 0.6rem; background: var(--superficie-2); }
+.admin-detalle dl { margin: 0; }
+.admin-detalle dt { color: var(--texto-suave); font-size: 0.9rem; }
+.admin-detalle dd { margin: 0 0 0.7rem; overflow-wrap: anywhere; }
+.admin-dialogo { color: var(--texto); max-width: min(420px, 90vw); padding: 1.5rem; }
+.admin-dialogo::backdrop { background: rgba(0, 0, 0, 0.7); }
+@media (max-width: 500px) {
+    .admin-form-grid, .admin-detalle { grid-template-columns: 1fr; }
+    .admin-detalle__imagen { max-width: 180px; }
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es" data-tema="oscuro">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <% if (admin) { %><meta name="csrf-token" content="<%= csrf %>"><% } %>
+    <title><%= titulo %> · Gaming Zone</title>
+    <link rel="icon" href="/assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/componentes.css">
+    <link rel="stylesheet" href="/admin/static/admin.css">
+    <script src="/js/tema.js"></script>
+    <script src="/admin/static/admin.js" defer></script>
+</head>
+<body class="admin">
+<header class="encabezado">
+    <div class="encabezado__interior">
+        <a class="marca admin-marca" href="<%= admin ? '/admin/dashboard' : '/admin/login' %>">
+            <img src="/assets/icon-192.png" alt="" width="44" height="44">
+            <span>
+                <span class="marca__nombre"><span class="marca__gaming">Gaming</span> <span class="marca__zone">Zone</span></span>
+                <span class="marca__lema">Administración</span>
+            </span>
+        </a>
+        <nav class="nav" aria-label="Navegación del panel">
+            <% if (admin) { %>
+                <a class="nav__enlace" href="/admin/dashboard">Productos</a>
+            <% } %>
+            <a class="nav__enlace" href="/">Ir a la tienda</a>
+            <button type="button" class="nav__enlace nav__tema" id="btn-tema" aria-label="Cambiar tema">Tema</button>
+            <% if (admin) { %>
+                <form method="post" action="/admin/logout">
+                    <input type="hidden" name="_csrf" value="<%= csrf %>">
+                    <button type="submit" class="nav__enlace nav__enlace--secundario">Cerrar sesión</button>
+                </form>
+            <% } %>
+        </nav>
+    </div>
+</header>

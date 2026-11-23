@@ -1,0 +1,27 @@
+<%- include("header") %>
+<main class="contenido admin-contenido">
+    <section class="tarjeta admin-formulario admin-login">
+        <img class="admin-login__logo" src="/assets/icon-192.png" alt="" width="64" height="64">
+        <h1>Ingresar al panel</h1>
+        <% if (error) { %>
+            <p class="aviso aviso--error" role="alert"><%= error %></p>
+        <% } %>
+        <form method="post" action="/admin/login" class="admin-campos">
+            <input type="hidden" name="_csrf" value="<%= csrf %>">
+            <div class="campo">
+                <label for="admin-mail">Correo electrónico</label>
+                <input type="email" id="admin-mail" name="mail" value="<%= mail %>" maxlength="120" autocomplete="username" required>
+            </div>
+            <div class="campo">
+                <label for="admin-clave">Contraseña</label>
+                <input type="password" id="admin-clave" name="contrasena" autocomplete="current-password" required>
+            </div>
+            <button type="submit" class="btn btn--primario btn--bloque">Ingresar</button>
+            <% if (demo) { %>
+                <button type="button" class="btn btn--secundario btn--bloque" id="acceso-rapido"
+                    data-mail="<%= demo.mail %>" data-clave="<%= demo.clave %>">Acceso rápido</button>
+            <% } %>
+        </form>
+    </section>
+</main>
+<%- include("footer") %>

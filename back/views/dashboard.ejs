@@ -1,0 +1,69 @@
+<%- include("header") %>
+<main class="contenido admin-contenido">
+    <div class="admin-cabecera">
+        <div>
+            <h1>Productos</h1>
+            <p>Sesión de <%= admin.nombre %></p>
+        </div>
+        <div class="admin-acciones">
+            <a class="btn btn--secundario" href="/admin/ventas/excel">Descargar ventas en Excel</a>
+            <a class="btn btn--primario" href="/admin/productos/nuevo">Nuevo producto</a>
+        </div>
+    </div>
+
+    <% for (const grupo of grupos) { %>
+        <section class="tarjeta admin-grupo" aria-labelledby="grupo-<%= grupo.id %>">
+            <div class="admin-grupo__cabecera">
+                <h2 id="grupo-<%= grupo.id %>"><%= grupo.nombre %></h2>
+                <span><%= grupo.productos.length %> <%= grupo.productos.length === 1 ? 'producto' : 'productos' %></span>
+            </div>
+            <% if (!grupo.productos.length) { %>
+                <p class="admin-vacio">Todavía no hay productos en esta categoría.</p>
+            <% } else { %>
+                <div class="admin-tabla-wrap" tabindex="0" role="region" aria-label="Listado de <%= grupo.nombre %>">
+                    <table class="admin-tabla">
+                        <thead><tr><th scope="col">Producto</th><th scope="col">Precio</th><th scope="col">Estado</th><th scope="col">Acciones</th></tr></thead>
+                        <tbody>
+                        <% for (const producto of grupo.productos) { %>
+                            <tr>
+                                <th scope="row">
+                                    <a class="admin-producto" href="/admin/productos/<%= producto.id %>">
+                                        <img src="<%= producto.imagen || '/assets/icon-192.png' %>" alt="" width="48" height="48" loading="lazy">
+                                        <span><strong><%= producto.nombre %></strong><small>#<%= producto.id %></small></span>
+                                    </a>
+                                </th>
+                                <td class="admin-precio"><%= formatoPrecio.format(producto.precio) %></td>
+                                <td><span class="admin-estado <%= producto.activo ? 'admin-estado--activo' : '' %>"><%= producto.activo ? 'Activo' : 'Inactivo' %></span></td>
+                                <td>
+                                    <div class="admin-acciones">
+                                        <a class="btn btn--secundario btn--chico" href="/admin/productos/<%= producto.id %>/editar">Editar</a>
+                                        <form method="post" action="/admin/productos/<%= producto.id %>/<%= producto.activo ? 'desactivar' : 'activar' %>"
+                                            data-confirmar="<%= producto.activo ? 'Desactivar' : 'Reactivar' %>" data-producto="<%= producto.nombre %>">
+                                            <input type="hidden" name="_csrf" value="<%= csrf %>">
+                                            <button class="btn <%= producto.activo ? 'btn--peligro' : 'btn--exito' %> btn--chico" type="submit">
+                                                <%= producto.activo ? 'Desactivar' : 'Reactivar' %>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            <% } %>
+        </section>
+    <% } %>
+
+    <dialog class="tarjeta admin-dialogo" id="confirmar-estado" aria-labelledby="confirmar-titulo">
+        <form method="dialog" class="admin-campos">
+            <h2 id="confirmar-titulo">Cambiar estado</h2>
+            <p id="confirmar-producto"></p>
+            <div class="admin-acciones">
+                <button class="btn btn--secundario" type="submit" value="cancelar" autofocus>Cancelar</button>
+                <button class="btn btn--primario" type="submit" value="aceptar" id="confirmar-accion">Confirmar</button>
+            </div>
+        </form>
+    </dialog>
+</main>
+<%- include("footer") %>

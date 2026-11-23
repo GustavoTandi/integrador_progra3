@@ -1,0 +1,9 @@
+<%- include("header") %>
+<main class="contenido admin-contenido">
+    <section class="tarjeta admin-formulario">
+        <h1><%= titulo %></h1>
+        <p role="alert"><%= mensaje %></p>
+        <div><a class="btn btn--secundario" href="<%= admin ? '/admin/dashboard' : '/admin/login' %>">Volver al panel</a></div>
+    </section>
+</main>
+<%- include("footer") %>
