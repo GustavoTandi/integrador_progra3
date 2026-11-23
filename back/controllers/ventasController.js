@@ -1,7 +1,6 @@
 import sequelize from "../config/database.js";
 import { Producto, Venta, VentaProducto } from "../models/index.js";
 
-// Límite de DECIMAL(14, 2), expresado en centavos.
 const MAXIMO_TOTAL_CENTAVOS = 99_999_999_999_999;
 
 export async function crearVenta(req, res) {

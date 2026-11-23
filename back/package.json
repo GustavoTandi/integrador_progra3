@@ -16,7 +16,6 @@
   "type": "module",
   "dependencies": {
     "bcryptjs": "^3.0.3",
-    "cors": "^2.8.6",
     "dotenv": "^18.0.10",
     "ejs": "^7.0.2",
     "exceljs": "^4.4.0",

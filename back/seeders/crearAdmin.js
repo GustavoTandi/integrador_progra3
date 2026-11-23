@@ -2,6 +2,8 @@ import bcrypt from "bcryptjs";
 import Usuario from "../models/usuario.js";
 import { crearAdministrador, validarAdministrador } from "../servicios/administradores.js";
 
+// Crea el primer administrador con los datos de .env.
+
 try {
     const datos = validarAdministrador({
         nombre: process.env.ADMIN_NOMBRE || "Administrador",

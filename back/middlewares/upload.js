@@ -21,6 +21,7 @@ export function subirImagenProducto(req, res, next) {
     });
 }
 
+// Se identifica el formato por los primeros bytes del archivo, no por lo que declara el cliente.
 export async function guardarImagenProducto(archivo) {
     const bytes = archivo.buffer;
     let extension;

@@ -1,6 +1,7 @@
 import bcrypt from "bcryptjs";
 import Usuario from "../models/usuario.js";
 
+//Recibe email y password como llegan de la API y devuelve mail y contrasena como los guarda el modelo.
 export function validarAdministrador(datos = {}) {
     const nombre = typeof datos.nombre === "string" ? datos.nombre.trim() : "";
     const mail = typeof datos.email === "string" ? datos.email.trim().toLowerCase() : "";
